@@ -1,0 +1,25 @@
+.match {
+    position: relative;
+    width: 100%; height: 100%;
+    border-top: 1px solid #555;
+    border-right: 1px solid #555;
+    border-bottom: 1px solid #555;
+}
+.match > span {
+    position: absolute;
+    left: 5px;
+    font-size: 0.85em;
+}
+.match > span.info {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    font-size: 0.8em;
+    color: #BBB;
+}
+.match > span.teama {
+    top: -20px;
+}
+.match > span.teamb {
+    bottom: -20px;
+}

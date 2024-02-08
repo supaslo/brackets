@@ -11,17 +11,11 @@ html, body, .brackets {
   float: left;
   height: 100%;
 }
-.brackets > div > div > div {
-  margin: 50px 0;
-}
 .brackets > .group2 {
   height: 260px;
 }
 .brackets > .group2 > div {
   width: 49%;
-}
-.brackets > div > .r1 > div {
-  height: 60px;
 }
 .brackets div.final > div.bracketbox {
   border-top: 0px;
@@ -30,4 +24,28 @@ html, body, .brackets {
 }
 .brackets > div > div > div:last-of-type {
   margin-bottom: 0px;
+}
+.brackets > .group2 {
+  height: 260px;
+}
+.brackets > .group2 > div {
+  width: 49%;
+}
+.brackets > .group3 {
+  height: 320px;
+}
+.brackets > .group3 > div {
+  width: 32.7%;
+}
+.brackets > .group4 > div {
+  width: 24.5%;
+}
+.brackets > .group5 > div {
+  width: 19.6%;
+}
+.brackets > .group6 {
+  height: 2000px;
+}
+.brackets > .group6 > div {
+  width: 16.3%;
 }

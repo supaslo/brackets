@@ -1,40 +1,44 @@
 import './App.css';
-import Match from './match/Match';
+import Round from './components/round/Round';
+
+interface Matches {
+  id: number,
+  homeOpponent: string,
+  awayOpponent: string
+}
+
+const CurrentMatches: Matches[] = [
+  {id: 1, homeOpponent: "Fireballz", awayOpponent: "Your Other"},
+  {id: 2, homeOpponent: "Pervs", awayOpponent: "Middle Aged Whores"},
+  {id: 3, homeOpponent: "Don't Care", awayOpponent: "The Statler's"},
+  {id: 4, homeOpponent: "Wrong Hole", awayOpponent: "Bangin the Neighbors"} 
+]
 
 const App = () => {
 
-  const round = {
-    matches: [
-      {
-        id: 1,
-        homeOpponent: "Team1A",
-        awayOpponent: "Team1B",
-      },
-      {
-        id: 2,
-        homeOpponent: "Team2A",
-        awayOpponent: "Team2B",
-      },
-      {
-        id: 3,
-        homeOpponent: "",
-        awayOpponent: "",
-      }
-    ]
+  const numberOfTeams = 8;
+
+  const numberOfRounds = Math.floor(numberOfTeams/2);
+
+  const bracketRounds: string[] = [];
+
+  for (let i = 0; i < numberOfRounds; i++) {
+    let displayRoundNumber = i + 1;
+    bracketRounds.push("r" + displayRoundNumber);
   }
 
-  const roundMatches = round.matches.map(function(match){
-    return <Match matchId={match.id} teama={match.homeOpponent} teamb={match.awayOpponent} />
+  const bracket = bracketRounds.map(function(round) {
+    return <Round roundId={round} currentMatches={CurrentMatches} />
   })
+
+  const group = "group" + bracketRounds.length;
 
   return (
     <>
     <p></p>
     <div className='brackets' id='brackets'>
-        <div className='group2' id='b0'>
-            <div className='r1'>
-                {roundMatches}
-            </div>
+        <div className={group} id='b0'>
+            {bracket}
         </div>
     </div>
     </>

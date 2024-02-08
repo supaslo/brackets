@@ -1,0 +1,31 @@
+.r1 > div {
+    height: 60px;
+}
+.r2 > div {
+    margin: 80px 0 110px 0;
+    height: 110px;
+}
+.r3 > div {
+    margin: 135px 0 220px 0;
+    height: 220px;
+}
+.r4 > div {
+    margin: 250px 0 445px 0;
+    height: 445px;
+}
+.r5 > div {
+    margin: 460px 0 0 0;
+    height: 900px;
+}
+.r6 > div {
+    margin: 900px 0 0 0;
+}
+.r4 > div.drop {
+    height: 180px;
+    margin-bottom: 0px;
+}
+.r5 > div.final.drop {
+    margin-top: 345px;
+    margin-bottom: 0px;
+    height: 1px;
+}

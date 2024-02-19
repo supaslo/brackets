@@ -23,6 +23,14 @@
 .match > span.teamb {
     bottom: -20px;
 }
+.match > span.teamc {
+    bottom: 1px;
+}
+.final > div.match {
+    border-top: 0px;
+    border-right: 0px;
+    height: 0px;
+}
 div {
     margin: 50px 0;
 }

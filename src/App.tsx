@@ -1,44 +1,88 @@
+import { useEffect, useState } from 'react';
 import './App.css';
-import Round from './components/round/Round';
+import { Player } from './models/Player';
+import { Team } from './models/Team';
+import MatchService from './services/MatchService';
+import RoundDisplay from './components/roundDisplay/RoundDisplay';
+import { RoundInfo } from './models/RoundInfo';
 
-interface Matches {
-  id: number,
-  homeOpponent: string,
-  awayOpponent: string
-}
-
-const CurrentMatches: Matches[] = [
-  {id: 1, homeOpponent: "Fireballz", awayOpponent: "Your Other"},
-  {id: 2, homeOpponent: "Pervs", awayOpponent: "Middle Aged Whores"},
-  {id: 3, homeOpponent: "Don't Care", awayOpponent: "The Statler's"},
-  {id: 4, homeOpponent: "Wrong Hole", awayOpponent: "Bangin the Neighbors"} 
+const Players: Player[] = [
+  {id: 1, firstName: "Matthew", lastName: "Williams"},
+  {id: 2, firstName: "David", lastName: "Lewis"},
+  {id: 3, firstName: "Misty", lastName: "Benge"},
+  {id: 4, firstName: "Rory", lastName: "Thomas"},
+  {id: 5, firstName: "Miranda", lastName: "Dennis"},
+  {id: 6, firstName: "Hank", lastName: "Gertsen"},
+  {id: 7, firstName: "Steve", lastName: "Fuller"},
+  {id: 8, firstName: "Darren", lastName: "Stout"},
+  {id: 9, firstName: "Linda", lastName: "Benge"},
+  {id: 10, firstName: "Andy", lastName: "Raines"},
+  {id: 11, firstName: "Ryan", lastName: "Statler"},
+  {id: 12, firstName: "Kassie", lastName: "Statler"},
+  {id: 13, firstName: "Holly", lastName: "Devore"},
+  {id: 14, firstName: "Bryan", lastName: "Sherman"},
+  {id: 15, firstName: "Joe", lastName: "Devore"},
+  {id: 16, firstName: "Charity", lastName: "Skye"}
 ]
+
+const rounds: RoundInfo[] = [
+  {id: "r1", final: false, matches: [
+    {id: 1, home: 1, away: 8},
+    {id: 2, home: 2, away: 7},
+    {id: 3, home: 3, away: 6},
+    {id: 4, home: 4, away: 5}
+  ]},
+  {id: "r2", final: false, matches: [
+    {id: 5, home: 0, away: 0},
+    {id: 6, home: 0, away: 0}
+  ]},
+  {id: "r3", final: false, matches: [
+    {id: 7, home: 0, away: 0}
+  ]},
+  {id: "r4", final: true, matches: [
+    {id: 8, home: 0, away: 0}
+  ]}
+];
 
 const App = () => {
 
-  const numberOfTeams = 8;
+  //const numberOfTeams = teams.length;
+  //const numberOfRounds = Math.floor(numberOfTeams/2);
+  //const bracketRounds: string[] = [];
+  /*const [matches, setMatches] = useState<Array<Match>>([]);
 
-  const numberOfRounds = Math.floor(numberOfTeams/2);
+  useEffect(() => {
+    getMatches();
+  }, []);
 
-  const bracketRounds: string[] = [];
+  const getMatches = () => {
+    MatchService.getAll()
+      .then((response: any) => {
+        setMatches(response.data);
+        console.log(response.data);
+      })
+      .catch((e: Error) => {
+        console.log(e);
+      });
+  };*/
 
-  for (let i = 0; i < numberOfRounds; i++) {
+  /*for (let i = 0; i < numberOfRounds; i++) {
     let displayRoundNumber = i + 1;
     bracketRounds.push("r" + displayRoundNumber);
-  }
+  }*/
 
-  const bracket = bracketRounds.map(function(round) {
-    return <Round roundId={round} currentMatches={CurrentMatches} />
+  const winnersSide = rounds.map(function(round) {
+    return <RoundDisplay roundInfo={round} />
   })
 
-  const group = "group" + bracketRounds.length;
+  const group = "group" + rounds.length;
 
   return (
     <>
     <p></p>
     <div className='brackets' id='brackets'>
         <div className={group} id='b0'>
-            {bracket}
+            {winnersSide}
         </div>
     </div>
     </>

@@ -1,4 +1,3 @@
-import { MatchInfo } from "../../models/MatchInfo";
 import { RoundInfo } from "../../models/RoundInfo";
 import Match from "../match/Match";
 import "./RoundDisplay.css"

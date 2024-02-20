@@ -7,7 +7,7 @@ type MatchProps = {
     currentMatch: MatchInfo;
 };
 
-const teams: Team[] = [
+/*const teams: Team[] = [
     {id: 1, name: "Fireballz", players: [1,2]},
     {id: 2, name: "Your Other", players: [3,4]},
     {id: 3, name: "Pervs", players: [5,6]},
@@ -16,11 +16,11 @@ const teams: Team[] = [
     {id: 6, name: "The Statler's", players: [11,12]}, 
     {id: 7, name: "Wrong Hole", players: [13,14]}, 
     {id: 8, name: "Bangin the Neighbors", players: [15,16]}, 
-  ];
+  ];*/
 
 const Match: React.FC<MatchProps> = ({ finalMatch, currentMatch }) => {
 
-    let homeTeam: Team | undefined;
+    /*let homeTeam: Team | undefined;
     let awayTeam: Team | undefined;
     let homeTeamName: string;
     let awayTeamName: string;
@@ -43,13 +43,13 @@ const Match: React.FC<MatchProps> = ({ finalMatch, currentMatch }) => {
         awayTeamName = awayTeam.name
     } else {
         awayTeamName = ""
-    };
+    };*/
 
     if (finalMatch) {
         return (
             <div className="final">
                 <div className="match">
-                    <span className="teamc">{homeTeamName}</span>
+                    <span className="teamc">{currentMatch.home}</span>
                 </div>
             </div>
         );
@@ -58,8 +58,8 @@ const Match: React.FC<MatchProps> = ({ finalMatch, currentMatch }) => {
             <div>
                 <div className="match">
                     <span className="info">{currentMatch.id}</span>
-                    <span className="teama">{homeTeamName}</span>
-                    <span className="teamb">{awayTeamName}</span>
+                    <span className="teama">{currentMatch.home}</span>
+                    <span className="teamb">{currentMatch.away}</span>
                 </div>
             </div>
         );

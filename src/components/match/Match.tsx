@@ -1,5 +1,5 @@
-import { MatchInfo } from '../../models/MatchInfo';
 import './Match.css';
+import { MatchInfo } from '../../models/MatchInfo';
 import { Team } from '../../models/Team';
 
 type MatchProps = {
@@ -24,24 +24,7 @@ const Match: React.FC<MatchProps> = ({ finalMatch, currentMatch }) => {
     let awayTeam: Team | undefined;
     let homeTeamName: string;
     let awayTeamName: string;
-    /*const [home, setHome] = useState<string>("");
-    const [away, setAway] = useState<string>("");
-    const [matches, setMatches] = useState<Array<MatchPlayerList>>([]);
 
-    useEffect(() => {
-      getMatches();
-    }, []);
-  
-    const getMatches = () => {
-      MatchService.getAll()
-        .then((response: any) => {
-          setMatches(response.data);
-          console.log(response.data);
-        })
-        .catch((e: Error) => {
-          console.log(e);
-        });
-    };*/
     if (currentMatch.home > 0) {
         homeTeam = teams.find(team => team.id === currentMatch.home)
     };

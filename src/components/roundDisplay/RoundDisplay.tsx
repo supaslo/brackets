@@ -14,10 +14,6 @@ const RoundDisplay: React.FC<RoundDisplayProps> = ({ roundInfo }) => {
       return <Match finalMatch={finalMatch} currentMatch={match} />
     })
 
-    /*for (let i = 0; i < currentRound.numberOfMatches; i++) {
-      roundMatch = <Match currentMatch={currentMatch[1]} />
-    }*/
-
     const roundClass = roundInfo.id
   
     return (

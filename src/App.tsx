@@ -1,12 +1,8 @@
-import { useEffect, useState } from 'react';
 import './App.css';
-import { Player } from './models/Player';
-import { Team } from './models/Team';
-import MatchService from './services/MatchService';
-import RoundDisplay from './components/roundDisplay/RoundDisplay';
-import { RoundInfo } from './models/RoundInfo';
+import Bracket from './components/bracket/Bracket';
+import GetRounds from './services/GetRounds';
 
-const Players: Player[] = [
+/*const Players: Player[] = [
   {id: 1, firstName: "Matthew", lastName: "Williams"},
   {id: 2, firstName: "David", lastName: "Lewis"},
   {id: 3, firstName: "Misty", lastName: "Benge"},
@@ -23,9 +19,9 @@ const Players: Player[] = [
   {id: 14, firstName: "Bryan", lastName: "Sherman"},
   {id: 15, firstName: "Joe", lastName: "Devore"},
   {id: 16, firstName: "Charity", lastName: "Skye"}
-]
+]*/
 
-const rounds: RoundInfo[] = [
+/*const rounds: RoundInfo[] = [
   {id: "r1", final: false, matches: [
     {id: 1, home: 1, away: 8},
     {id: 2, home: 2, away: 7},
@@ -42,51 +38,19 @@ const rounds: RoundInfo[] = [
   {id: "r4", final: true, matches: [
     {id: 8, home: 0, away: 0}
   ]}
-];
+];*/
 
 const App = () => {
 
-  //const numberOfTeams = teams.length;
-  //const numberOfRounds = Math.floor(numberOfTeams/2);
-  //const bracketRounds: string[] = [];
-  /*const [matches, setMatches] = useState<Array<Match>>([]);
-
-  useEffect(() => {
-    getMatches();
-  }, []);
-
-  const getMatches = () => {
-    MatchService.getAll()
-      .then((response: any) => {
-        setMatches(response.data);
-        console.log(response.data);
-      })
-      .catch((e: Error) => {
-        console.log(e);
-      });
-  };*/
-
-  /*for (let i = 0; i < numberOfRounds; i++) {
-    let displayRoundNumber = i + 1;
-    bracketRounds.push("r" + displayRoundNumber);
-  }*/
-
-  const winnersSide = rounds.map(function(round) {
-    return <RoundDisplay roundInfo={round} />
-  })
-
-  const group = "group" + rounds.length;
+  const { data: rounds, error, isPending } = GetRounds();
 
   return (
-    <>
-    <p></p>
-    <div className='brackets' id='brackets'>
-        <div className={group} id='b0'>
-            {winnersSide}
-        </div>
+    <div className="home">
+      { error && <div>{ error }</div> }
+      { isPending && <div>Loading...</div> }
+      { rounds && <Bracket rounds={rounds}></Bracket>}
     </div>
-    </>
-  );
+  )
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import './App.css';
-import Bracket from './components/bracket/Bracket';
+import BracketDisplay from './components/bracket/BracketDisplay';
 import GetRounds from './services/GetRounds';
 
 /*const Players: Player[] = [
@@ -42,13 +42,13 @@ import GetRounds from './services/GetRounds';
 
 const App = () => {
 
-  const { data: rounds, error, isPending } = GetRounds();
+  const { data: bracket, error, isPending } = GetRounds();
 
   return (
     <div className="home">
       { error && <div>{ error }</div> }
       { isPending && <div>Loading...</div> }
-      { rounds && <Bracket rounds={rounds}></Bracket>}
+      { bracket && <BracketDisplay bracket={bracket}></BracketDisplay>}
     </div>
   )
 }

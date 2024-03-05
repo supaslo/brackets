@@ -4,7 +4,7 @@
     "rounds": [
         {
             "id": 1,
-            "finalRound": "false",
+            "finalRound": false,
             "matches": [
                 {
                     "id": 1,
@@ -30,7 +30,7 @@
         },
         {
             "id": 2,
-            "finalRound": "false",
+            "finalRound": false,
             "matches": [
                 {
                     "id": 5,
@@ -46,7 +46,7 @@
         },
         {
             "id": 3,
-            "finalRound": "false",
+            "finalRound": false,
             "matches": [
                 {
                     "id": 7,
@@ -57,7 +57,7 @@
         },
         {
             "id": 4,
-            "finalRound": "true",
+            "finalRound": true,
             "matches": [
                 {
                     "id": 8,

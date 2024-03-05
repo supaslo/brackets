@@ -1,10 +1,9 @@
-import './Match.css';
-import { MatchInfo } from '../../models/MatchInfo';
-import { Team } from '../../models/Team';
+import './MatchDisplay.css';
+import { Match } from '../../models/Match';
 
-type MatchProps = {
+type MatchDisplayProps = {
     finalMatch: boolean;
-    currentMatch: MatchInfo;
+    currentMatch: Match;
 };
 
 /*const teams: Team[] = [
@@ -18,7 +17,7 @@ type MatchProps = {
     {id: 8, name: "Bangin the Neighbors", players: [15,16]}, 
   ];*/
 
-const Match: React.FC<MatchProps> = ({ finalMatch, currentMatch }) => {
+const MatchDisplay: React.FC<MatchDisplayProps> = ({ finalMatch, currentMatch }) => {
 
     /*let homeTeam: Team | undefined;
     let awayTeam: Team | undefined;
@@ -66,4 +65,4 @@ const Match: React.FC<MatchProps> = ({ finalMatch, currentMatch }) => {
     }
   }
   
-  export default Match;
+  export default MatchDisplay;

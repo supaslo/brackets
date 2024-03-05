@@ -1,4 +1,4 @@
-export interface MatchInfo {
+export interface Match {
     id: number,
     home: string,
     away: string

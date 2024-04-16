@@ -1,6 +1,6 @@
 import './BracketDisplay.css';
-import { Bracket } from "../../models/Bracket";
 import RoundDisplay from "../round/RoundDisplay";
+import { Bracket } from '../../models/Bracket';
 
 type BracketDisplayProps = {
     bracket: Bracket;

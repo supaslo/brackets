@@ -3,5 +3,5 @@ import { Round } from "./Round";
 export interface Bracket {
     id: string,
     name: string,
-    rounds: number[]
+    rounds: Round[]
 }

@@ -6,7 +6,7 @@ const GetRounds = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8080/bracket')
+    fetch('http://localhost:8080/bracket/1')
       .then((response) => response.json())
       .then((data) => {
         setIsPending(false);
